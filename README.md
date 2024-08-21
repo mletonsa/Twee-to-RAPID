@@ -1,1 +1,59 @@
 # Twee-to-RAPID
+
+## Universal Turing Machine 4-6.twee
+
+An example of Universal Turing Machine implementation in Twine twee format. Here is an example how the code looks like:
+
+```
+:: Start
+You are at the beginning of the tape, in state q0.
+[[Read 0->q0_0]] | [[Read 1->q0_1]] | [[Read 2->q0_2]] | [[Read 3->q0_3]] | [[Read 4->q0_4]] | [[Read 5->q0_5]]
+
+:: q0
+You are in state q0.
+[[Read 0->q0_0]] | [[Read 1->q0_1]] | [[Read 2->q0_2]] | [[Read 3->q0_3]] | [[Read 4->q0_4]] | [[Read 5->q0_5]]
+
+:: q0_0
+You read symbol 0 in state q0. You will write 1 and move right.
+[[Move to q1->q1]]
+```
+
+## trans.py
+
+Takes UTM.twee and converts it to RAPID code saving result to UTM.rapid. 
+
+Currently it is not general twee to rapid translator but works as an example code. General translator requires some common guidelines what is allowed in the code and how it is connected to robots.
+
+## UTM.rapid
+
+An example of Universal Turing Machine automatically translated from Twee to RAPID. Here is an example how the code looks like:
+
+```
+q0:
+GetSymbol;
+Test symbol
+Case 0:
+    Goto q0_0;
+Case 1:
+    Goto q0_1;
+Case 2:
+    Goto q0_2;
+Case 3:
+    Goto q0_3;
+Case 4:
+    Goto q0_4;
+Case 5:
+    Goto q0_5;
+
+q0_0:
+PutSymbol 1;
+TurnRobot_right;
+Goto q1;
+
+q0_1:
+PutSymbol 2;
+TurnRobot_left;
+Goto q2;
+```
+
+q0, q1, q2 and q3 are the four states in this machine and switching states is implemented by Goto commands. Functions GetSymbol, PutSymbol, TurnRobot_left, and TurnRobot_right need to be implemented in RobotStudio. Here a single turning robot is chosen so turn left and right correspond to move left and right in a tape.
