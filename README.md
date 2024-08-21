@@ -1,5 +1,9 @@
 # Twee-to-RAPID
 
+These are draft codes for an upcoming conference article. Link to conference paper and more information will be added later to provide further explanation.
+
+Our older version from Twine twee stories to Arduino can be found at [https://github.com/digitarina/TweeToArduino/]
+
 ## Universal Turing Machine 4-6.twee
 
 An example of Universal Turing Machine implementation in Twine twee format. Here is an example how the code looks like:
