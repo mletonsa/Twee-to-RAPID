@@ -1,0 +1,202 @@
+
+Start:
+GetSymbol;
+Test symbol
+Case 0:
+    Goto q0_0;
+Case 1:
+    Goto q0_1;
+Case 2:
+    Goto q0_2;
+Case 3:
+    Goto q0_3;
+Case 4:
+    Goto q0_4;
+Case 5:
+    Goto q0_5;
+
+q0:
+GetSymbol;
+Test symbol
+Case 0:
+    Goto q0_0;
+Case 1:
+    Goto q0_1;
+Case 2:
+    Goto q0_2;
+Case 3:
+    Goto q0_3;
+Case 4:
+    Goto q0_4;
+Case 5:
+    Goto q0_5;
+
+q0_0:
+PutSymbol 1;
+TurnRobot_right;
+Goto q1;
+
+q0_1:
+PutSymbol 2;
+TurnRobot_left;
+Goto q2;
+
+q0_2:
+PutSymbol 3;
+TurnRobot_right;
+Goto q1;
+
+q0_3:
+PutSymbol 4;
+TurnRobot_left;
+Goto q2;
+
+q0_4:
+PutSymbol 5;
+TurnRobot_right;
+Goto q1;
+
+q0_5:
+PutSymbol 0;
+TurnRobot_left;
+Goto q2;
+
+q1:
+GetSymbol;
+Test symbol
+Case 0:
+    Goto q1_0;
+Case 1:
+    Goto q1_1;
+Case 2:
+    Goto q1_2;
+Case 3:
+    Goto q1_3;
+Case 4:
+    Goto q1_4;
+Case 5:
+    Goto q1_5;
+
+q1_0:
+PutSymbol 3;
+TurnRobot_right;
+Goto q0;
+
+q1_1:
+PutSymbol 4;
+TurnRobot_left;
+Goto q3;
+
+q1_2:
+PutSymbol 0;
+TurnRobot_right;
+Goto q0;
+
+q1_3:
+PutSymbol 1;
+TurnRobot_left;
+Goto q3;
+
+q1_4:
+PutSymbol 2;
+TurnRobot_right;
+Goto q0;
+
+q1_5:
+PutSymbol 5;
+TurnRobot_left;
+Goto q3;
+
+q2:
+GetSymbol;
+Test symbol
+Case 0:
+    Goto q2_0;
+Case 1:
+    Goto q2_1;
+Case 2:
+    Goto q2_2;
+Case 3:
+    Goto q2_3;
+Case 4:
+    Goto q2_4;
+Case 5:
+    Goto q2_5;
+
+q2_0:
+PutSymbol 5;
+TurnRobot_right;
+Goto q0;
+
+q2_1:
+PutSymbol 2;
+TurnRobot_left;
+Goto q1;
+
+q2_2:
+PutSymbol 1;
+TurnRobot_right;
+Goto q0;
+
+q2_3:
+PutSymbol 0;
+TurnRobot_left;
+Goto q1;
+
+q2_4:
+PutSymbol 3;
+TurnRobot_right;
+Goto q0;
+
+q2_5:
+PutSymbol 4;
+TurnRobot_left;
+Goto q1;
+
+q3:
+GetSymbol;
+Test symbol
+Case 0:
+    Goto q3_0;
+Case 1:
+    Goto q3_1;
+Case 2:
+    Goto q3_2;
+Case 3:
+    Goto q3_3;
+Case 4:
+    Goto q3_4;
+Case 5:
+    Goto q3_5;
+
+q3_0:
+PutSymbol 0;
+TurnRobot_right;
+Goto Halt;
+
+q3_1:
+PutSymbol 1;
+TurnRobot_left;
+Goto Halt;
+
+q3_2:
+PutSymbol 2;
+TurnRobot_right;
+Goto Halt;
+
+q3_3:
+PutSymbol 3;
+TurnRobot_left;
+Goto Halt;
+
+q3_4:
+PutSymbol 4;
+TurnRobot_right;
+Goto Halt;
+
+q3_5:
+PutSymbol 5;
+TurnRobot_left;
+Goto Halt;
+
+Halt:
