@@ -61,3 +61,16 @@ Goto q2;
 ```
 
 q0, q1, q2 and q3 are the four states in this machine and switching states is implemented by Goto commands. Functions GetSymbol, PutSymbol, TurnRobot_left, and TurnRobot_right need to be implemented in RobotStudio. Here a single turning robot is chosen so turn left and right correspond to move left and right in a tape.
+
+Notice that we have mapped the original symbols using: {0, 1, b, b_left, b_right, c} → {0,1,2,3,4,5}
+
+And we use the following UTM(4,6) program by Rogozhin (Rogozhin, Y. "Small universal Turing machines." Theoretical Computer Science 168, no. 2 (1996): 215-240.):
+
+```
+q1 1b Lq1	q2 10 Rq2	q3 11 Rq3	q4 10 Rq4
+q1 bb Rq1	q2 bb Lq3	q3 bb Rq4	q4 bc Lq2
+q1 bb Lq1	q2 bb Rq2	q3 bb Rq3	q4 bb Rq4
+q1 60 Rq1	q2 bb Lq2	q3 b -	        q4 -
+q1 05 Lq1	q2 01 Lq2	q3 0c Rq1	q4 0c Lq2
+q1 c0 Rq4	q2 cb Rq2	q3 cl Rq1	q4 cb Rq4
+```
