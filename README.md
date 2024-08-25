@@ -65,3 +65,5 @@ q0, q1, q2 and q3 are the four states in this machine and switching states is im
 Notice that we have mapped the original symbols using: {0, 1, b, b_left, b_right, c} → {0,1,2,3,4,5}
 
 And we use the UTM(4,6) program by Rogozhin (Rogozhin, Y. "Small universal Turing machines." Theoretical Computer Science 168, no. 2 (1996): 215-240.) shown in utm46.png.
+
+Short UTM demostration (64x speed) is here: https://www.youtube.com/watch?v=DGmBg-d4Kws
