@@ -1,71 +1,6 @@
-
 Start:
 GetSymbol;
-Test symbol
-Case 0:
-    Goto q0_0;
-Case 1:
-    Goto q0_1;
-Case 2:
-    Goto q0_2;
-Case 3:
-    Goto q0_3;
-Case 4:
-    Goto q0_4;
-Case 5:
-    Goto q0_5;
-
-q0:
-GetSymbol;
-Test symbol
-Case 0:
-    Goto q0_0;
-Case 1:
-    Goto q0_1;
-Case 2:
-    Goto q0_2;
-Case 3:
-    Goto q0_3;
-Case 4:
-    Goto q0_4;
-Case 5:
-    Goto q0_5;
-
-q0_0:
-PutSymbol 1;
-TurnRobot_right;
-Goto q1;
-
-q0_1:
-PutSymbol 2;
-TurnRobot_left;
-Goto q2;
-
-q0_2:
-PutSymbol 3;
-TurnRobot_right;
-Goto q1;
-
-q0_3:
-PutSymbol 4;
-TurnRobot_left;
-Goto q2;
-
-q0_4:
-PutSymbol 5;
-TurnRobot_right;
-Goto q1;
-
-q0_5:
-PutSymbol 0;
-TurnRobot_left;
-Goto q2;
-
-q1:
-GetSymbol;
-Test symbol
-Case 0:
-    Goto q1_0;
+Test q
 Case 1:
     Goto q1_1;
 Case 2:
@@ -76,42 +11,64 @@ Case 4:
     Goto q1_4;
 Case 5:
     Goto q1_5;
+Case 6:
+    Goto q1_6;
+DEFAULT :
+    Goto Halt;
+ENDTEST
 
-q1_0:
-PutSymbol 3;
-TurnRobot_right;
-Goto q0;
+q1:
+GetSymbol;
+Test q
+Case 1:
+    Goto q1_1;
+Case 2:
+    Goto q1_2;
+Case 3:
+    Goto q1_3;
+Case 4:
+    Goto q1_4;
+Case 5:
+    Goto q1_5;
+Case 6:
+    Goto q1_6;
+DEFAULT :
+    Goto Halt;
+ENDTEST
 
 q1_1:
-PutSymbol 4;
-TurnRobot_left;
-Goto q3;
+SetSymbol (2);
+StepBack;
+Goto q2;
 
 q1_2:
-PutSymbol 0;
-TurnRobot_right;
-Goto q0;
-
-q1_3:
-PutSymbol 1;
-TurnRobot_left;
+SetSymbol (3);
+StepForward;
 Goto q3;
 
+q1_3:
+SetSymbol (4);
+StepBack;
+Goto q2;
+
 q1_4:
-PutSymbol 2;
-TurnRobot_right;
-Goto q0;
+SetSymbol (5);
+StepForward;
+Goto q3;
 
 q1_5:
-PutSymbol 5;
-TurnRobot_left;
+SetSymbol (6);
+StepBack;
+Goto q2;
+
+q1_6:
+SetSymbol (1);
+StepForward;
 Goto q3;
 
 q2:
 GetSymbol;
-Test symbol
-Case 0:
-    Goto q2_0;
+Test q
 Case 1:
     Goto q2_1;
 Case 2:
@@ -122,42 +79,45 @@ Case 4:
     Goto q2_4;
 Case 5:
     Goto q2_5;
-
-q2_0:
-PutSymbol 5;
-TurnRobot_right;
-Goto q0;
+Case 6:
+    Goto q2_6;
+DEFAULT :
+    Goto Halt;
+ENDTEST
 
 q2_1:
-PutSymbol 2;
-TurnRobot_left;
+SetSymbol (4);
+StepBack;
 Goto q1;
 
 q2_2:
-PutSymbol 1;
-TurnRobot_right;
-Goto q0;
+SetSymbol (5);
+StepForward;
+Goto q4;
 
 q2_3:
-PutSymbol 0;
-TurnRobot_left;
+SetSymbol (1);
+StepBack;
 Goto q1;
 
 q2_4:
-PutSymbol 3;
-TurnRobot_right;
-Goto q0;
+SetSymbol (2);
+StepForward;
+Goto q4;
 
 q2_5:
-PutSymbol 4;
-TurnRobot_left;
+SetSymbol (3);
+StepBack;
 Goto q1;
+
+q2_6:
+SetSymbol (6);
+StepForward;
+Goto q4;
 
 q3:
 GetSymbol;
-Test symbol
-Case 0:
-    Goto q3_0;
+Test q
 Case 1:
     Goto q3_1;
 Case 2:
@@ -168,35 +128,89 @@ Case 4:
     Goto q3_4;
 Case 5:
     Goto q3_5;
-
-q3_0:
-PutSymbol 0;
-TurnRobot_right;
-Goto Halt;
+Case 6:
+    Goto q3_6;
+DEFAULT :
+    Goto Halt;
+ENDTEST
 
 q3_1:
-PutSymbol 1;
-TurnRobot_left;
-Goto Halt;
+SetSymbol (6);
+StepBack;
+Goto q1;
 
 q3_2:
-PutSymbol 2;
-TurnRobot_right;
-Goto Halt;
+SetSymbol (3);
+StepForward;
+Goto q2;
 
-q3_3:
-PutSymbol 3;
-TurnRobot_left;
-Goto Halt;
+q3_3: 
+SetSymbol (2);
+StepBack;
+Goto q1;
 
 q3_4:
-PutSymbol 4;
-TurnRobot_right;
-Goto Halt;
+SetSymbol (1);
+StepForward;
+Goto q2;
 
 q3_5:
-PutSymbol 5;
-TurnRobot_left;
+SetSymbol (4);
+StepBack;
+Goto q1;
+
+q3_6:
+SetSymbol (5);
+StepForward;
+Goto q2;
+
+q4:
+GetSymbol;
+Test q
+Case 1:
+    Goto q4_1;
+Case 2:
+    Goto q4_2;
+Case 3:
+    Goto q4_3;
+Case 4:
+    Goto q4_4;
+Case 5:
+    Goto q4_5;
+Case 6:
+    Goto q4_6;
+DEFAULT :
+    Goto Halt;
+ENDTEST
+
+q4_1:
+SetSymbol (1);
+StepBack;
+Goto Halt;
+
+q4_2:
+SetSymbol (2);
+StepForward;
+Goto Halt;
+
+q4_3:
+SetSymbol (3);
+StepBack;
+Goto Halt;
+
+q4_4:
+SetSymbol (4);
+StepForward;
+Goto Halt;
+
+q4_5:
+SetSymbol (5);
+StepBack;
+Goto Halt;
+
+q4_6:
+SetSymbol (6);
+StepForward;
 Goto Halt;
 
 Halt:
